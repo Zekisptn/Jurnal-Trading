@@ -2,7 +2,7 @@ package com.example.jurnaltreding
 
 import android.app.Application
 import com.example.jurnaltreding.data.AppContainer
-import com.example.jurnaltreding.data.FakeAppContainer
+import com.example.jurnaltreding.data.AppDataContainer
 
 class JurnalApplication : Application() {
 
@@ -11,6 +11,6 @@ class JurnalApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        container = FakeAppContainer()
+        container = AppDataContainer(this)
     }
 }

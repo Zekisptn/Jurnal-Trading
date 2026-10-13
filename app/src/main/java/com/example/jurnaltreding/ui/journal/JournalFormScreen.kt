@@ -32,14 +32,18 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.OffsetMapping
+import androidx.compose.ui.text.input.TransformedText
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.jurnaltreding.data.local.Emotion
-import com.example.jurnaltreding.data.repository.fake.sampleEntries
+import com.example.jurnaltreding.ui.components.previewEntries
 import com.example.jurnaltreding.ui.components.AppTextField
 import com.example.jurnaltreding.ui.components.DateField
 import com.example.jurnaltreding.ui.components.EmptyState
@@ -55,6 +59,10 @@ import com.example.jurnaltreding.util.toFormInput
 private const val MAX_PRICE_DIGITS = 9
 private const val MAX_LOT_DIGITS = 6
 private const val STOCK_CODE_LENGTH = 4
+
+private val UppercaseTransformation = VisualTransformation { text ->
+    TransformedText(AnnotatedString(text.text.uppercase()), OffsetMapping.Identity)
+}
 
 @Composable
 fun JournalFormScreen(
@@ -161,13 +169,15 @@ private fun JournalFormFields(
         AppTextField(
             value = stockCode,
             onValueChange = { text ->
-                stockCode = text.filter { it.isLetter() }.uppercase().take(STOCK_CODE_LENGTH)
+                // Huruf besar hanya di tampilan; mengubah teks saat diketik bisa membuat huruf hilang.
+                stockCode = text.filter { it.isLetter() }.take(STOCK_CODE_LENGTH)
                 onFieldEdited(JournalField.STOCK_CODE)
             },
             label = "Kode saham",
             placeholder = "mis. BBCA",
             error = errors[JournalField.STOCK_CODE],
             enabled = enabled,
+            visualTransformation = UppercaseTransformation,
             keyboardOptions = KeyboardOptions(
                 capitalization = KeyboardCapitalization.Characters,
                 imeAction = ImeAction.Next
@@ -363,7 +373,7 @@ private fun JournalFormAddPreview() {
 @Composable
 private fun JournalFormEditPreview() {
     PreviewForm(
-        JournalFormUiState.Editing(isEditMode = true, initialInput = sampleEntries()[0].toFormInput())
+        JournalFormUiState.Editing(isEditMode = true, initialInput = previewEntries()[0].toFormInput())
     )
 }
 

@@ -36,7 +36,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.jurnaltreding.data.repository.fake.sampleEntries
+import com.example.jurnaltreding.ui.components.previewEntries
 import com.example.jurnaltreding.ui.components.EmptyState
 import com.example.jurnaltreding.ui.components.ErrorState
 import com.example.jurnaltreding.ui.components.JournalEntryCard
@@ -163,7 +163,7 @@ private fun PreviewList(uiState: JournalListUiState) {
 @Composable
 private fun JournalListPreview() {
     PreviewList(
-        JournalListUiState(content = JournalListContent.Success(sampleEntries(), hasAnyEntry = true))
+        JournalListUiState(content = JournalListContent.Success(previewEntries(), hasAnyEntry = true))
     )
 }
 

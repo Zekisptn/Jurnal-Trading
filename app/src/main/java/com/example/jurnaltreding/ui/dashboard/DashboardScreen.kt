@@ -29,7 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.jurnaltreding.data.repository.fake.sampleEntries
+import com.example.jurnaltreding.ui.components.previewEntries
 import com.example.jurnaltreding.ui.components.EmptyState
 import com.example.jurnaltreding.ui.components.ErrorState
 import com.example.jurnaltreding.ui.components.JournalEntryCard
@@ -260,7 +260,7 @@ private fun PreviewDashboard(uiState: DashboardUiState) {
 @Preview(showBackground = true, heightDp = 1000)
 @Composable
 private fun DashboardPreview() {
-    val entries = sampleEntries()
+    val entries = previewEntries()
     PreviewDashboard(
         DashboardUiState.Success(
             userName = "Investor Demo",

@@ -22,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jurnaltreding.data.local.Emotion
 import com.example.jurnaltreding.data.local.JournalEntry
-import com.example.jurnaltreding.data.repository.fake.sampleEntries
 import com.example.jurnaltreding.ui.theme.JurnalTredingTheme
 import com.example.jurnaltreding.ui.theme.tradingColors
 import com.example.jurnaltreding.util.formatDate
@@ -147,10 +146,10 @@ private fun JournalEntryCardPreview() {
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            val samples = sampleEntries()
+            val samples = previewEntries()
             JournalEntryCard(entry = samples[0], onClick = {})
             JournalEntryCard(entry = samples[1], onClick = {})
-            JournalEntryCard(entry = samples[4], onClick = {})
+            JournalEntryCard(entry = samples[2], onClick = {})
         }
     }
 }

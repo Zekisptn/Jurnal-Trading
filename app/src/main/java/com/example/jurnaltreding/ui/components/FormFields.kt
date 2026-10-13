@@ -45,6 +45,7 @@ fun AppTextField(
     singleLine: Boolean = true,
     minLines: Int = 1,
     prefix: String? = null,
+    visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default
 ) {
@@ -61,6 +62,7 @@ fun AppTextField(
         enabled = enabled,
         singleLine = singleLine,
         minLines = minLines,
+        visualTransformation = visualTransformation,
         keyboardOptions = keyboardOptions,
         keyboardActions = keyboardActions
     )

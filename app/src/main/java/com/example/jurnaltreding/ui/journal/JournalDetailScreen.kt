@@ -36,7 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.jurnaltreding.data.local.JournalEntry
-import com.example.jurnaltreding.data.repository.fake.sampleEntries
+import com.example.jurnaltreding.ui.components.previewEntries
 import com.example.jurnaltreding.ui.components.ConfirmDialog
 import com.example.jurnaltreding.ui.components.EmotionBadge
 import com.example.jurnaltreding.ui.components.EmptyState
@@ -292,13 +292,13 @@ private fun PreviewDetail(uiState: JournalDetailUiState) {
 @Preview(showBackground = true, heightDp = 900)
 @Composable
 private fun JournalDetailClosedPreview() {
-    PreviewDetail(JournalDetailUiState.Success(sampleEntries()[0]))
+    PreviewDetail(JournalDetailUiState.Success(previewEntries()[0]))
 }
 
 @Preview(showBackground = true, name = "Open")
 @Composable
 private fun JournalDetailOpenPreview() {
-    PreviewDetail(JournalDetailUiState.Success(sampleEntries()[4]))
+    PreviewDetail(JournalDetailUiState.Success(previewEntries()[2]))
 }
 
 @Preview(showBackground = true, name = "Kosong")
