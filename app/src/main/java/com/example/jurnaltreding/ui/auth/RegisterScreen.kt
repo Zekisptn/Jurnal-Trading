@@ -173,7 +173,7 @@ private fun RegisterContent(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, name = "Form kosong")
 @Composable
 private fun RegisterPreview() {
     JurnalTredingTheme {

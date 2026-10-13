@@ -55,7 +55,7 @@ val SurfaceContainerHigh17 = Color(0xFF282B28)
 val SurfaceContainerHighest22 = Color(0xFF323633)
 
 // Warna untung/rugi
-val ProfitLight = Color(0xFF1B7F3B)
+val ProfitLight = Color(0xFF17692F)
 val LossLight = Color(0xFFC62828)
 val ProfitDark = Color(0xFF6FDD8B)
 val LossDark = Color(0xFFFF8A80)

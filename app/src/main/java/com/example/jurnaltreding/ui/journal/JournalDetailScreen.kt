@@ -289,13 +289,13 @@ private fun PreviewDetail(uiState: JournalDetailUiState) {
     }
 }
 
-@Preview(showBackground = true, heightDp = 900)
+@Preview(showBackground = true, heightDp = 900, name = "Berisi data (Closed)")
 @Composable
 private fun JournalDetailClosedPreview() {
     PreviewDetail(JournalDetailUiState.Success(previewEntries()[0]))
 }
 
-@Preview(showBackground = true, name = "Open")
+@Preview(showBackground = true, name = "Berisi data (Open)")
 @Composable
 private fun JournalDetailOpenPreview() {
     PreviewDetail(JournalDetailUiState.Success(previewEntries()[2]))

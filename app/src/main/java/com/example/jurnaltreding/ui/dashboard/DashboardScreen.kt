@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.jurnaltreding.ui.components.previewEntries
+import com.example.jurnaltreding.ui.components.previewUser
 import com.example.jurnaltreding.ui.components.EmptyState
 import com.example.jurnaltreding.ui.components.ErrorState
 import com.example.jurnaltreding.ui.components.JournalEntryCard
@@ -257,13 +258,13 @@ private fun PreviewDashboard(uiState: DashboardUiState) {
     }
 }
 
-@Preview(showBackground = true, heightDp = 1000)
+@Preview(showBackground = true, heightDp = 1000, name = "Berisi data")
 @Composable
 private fun DashboardPreview() {
     val entries = previewEntries()
     PreviewDashboard(
         DashboardUiState.Success(
-            userName = "Investor Demo",
+            userName = previewUser().name,
             stats = calculateStats(entries),
             recentEntries = entries.sortedByDescending { it.buyDate }.take(3)
         )
@@ -275,7 +276,7 @@ private fun DashboardPreview() {
 private fun DashboardEmptyPreview() {
     PreviewDashboard(
         DashboardUiState.Success(
-            userName = "Investor Demo",
+            userName = previewUser().name,
             stats = JournalStats(0, 0, 0, 0, null, 0, null),
             recentEntries = emptyList()
         )

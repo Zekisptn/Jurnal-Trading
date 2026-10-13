@@ -36,6 +36,7 @@ import com.example.jurnaltreding.ui.components.ErrorBanner
 import com.example.jurnaltreding.ui.components.ErrorState
 import com.example.jurnaltreding.ui.components.LoadingButton
 import com.example.jurnaltreding.ui.components.LoadingState
+import com.example.jurnaltreding.ui.components.previewUser
 import com.example.jurnaltreding.ui.theme.JurnalTredingTheme
 
 @Composable
@@ -178,15 +179,17 @@ private fun PreviewEditProfile(uiState: EditProfileUiState) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, name = "Berisi data")
 @Composable
 private fun EditProfilePreview() {
     PreviewEditProfile(
-        EditProfileUiState.Editing(
-            email = "demo@jurnal.id",
-            initialName = "Investor Demo",
-            initialInvestingStyle = "Swing trading"
-        )
+        previewUser().let { user ->
+            EditProfileUiState.Editing(
+                email = user.email,
+                initialName = user.name,
+                initialInvestingStyle = user.investingStyle.orEmpty()
+            )
+        }
     )
 }
 
@@ -195,7 +198,7 @@ private fun EditProfilePreview() {
 private fun EditProfileValidationPreview() {
     PreviewEditProfile(
         EditProfileUiState.Editing(
-            email = "demo@jurnal.id",
+            email = previewUser().email,
             initialName = "",
             initialInvestingStyle = "",
             nameError = "Nama wajib diisi",

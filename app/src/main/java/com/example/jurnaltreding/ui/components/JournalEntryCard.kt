@@ -17,7 +17,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jurnaltreding.data.local.Emotion
@@ -47,7 +46,6 @@ fun ProfitLossText(
         text = formatRupiahSigned(amount),
         modifier = modifier,
         style = style,
-        fontWeight = FontWeight.SemiBold,
         color = profitLossColor(amount)
     )
 }
@@ -64,7 +62,7 @@ fun StatusBadge(isClosed: Boolean, modifier: Modifier = Modifier) {
     ) {
         Text(
             text = if (isClosed) "Closed" else "Open",
-            modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
             style = MaterialTheme.typography.labelMedium
         )
     }
@@ -80,7 +78,7 @@ fun EmotionBadge(emotion: Emotion, modifier: Modifier = Modifier) {
     ) {
         Text(
             text = emotion.label,
-            modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
             style = MaterialTheme.typography.labelMedium
         )
     }

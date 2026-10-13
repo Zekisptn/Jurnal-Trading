@@ -45,6 +45,7 @@ import com.example.jurnaltreding.ui.components.ConfirmDialog
 import com.example.jurnaltreding.ui.components.EmptyState
 import com.example.jurnaltreding.ui.components.ErrorState
 import com.example.jurnaltreding.ui.components.LoadingState
+import com.example.jurnaltreding.ui.components.previewUser
 import com.example.jurnaltreding.ui.theme.JurnalTredingTheme
 import com.example.jurnaltreding.util.formatDate
 
@@ -178,7 +179,11 @@ private fun ProfileDetail(
             modifier = Modifier.fillMaxWidth(),
             enabled = !isLoggingOut
         ) {
-            Icon(Icons.Filled.Edit, contentDescription = null, modifier = Modifier.size(18.dp))
+            Icon(
+                Icons.Filled.Edit,
+                contentDescription = null,
+                modifier = Modifier.size(ButtonDefaults.IconSize)
+            )
             Text("Edit Profil", modifier = Modifier.padding(start = 8.dp))
         }
         Spacer(Modifier.height(8.dp))
@@ -191,7 +196,7 @@ private fun ProfileDetail(
             Icon(
                 Icons.AutoMirrored.Filled.Logout,
                 contentDescription = null,
-                modifier = Modifier.size(18.dp)
+                modifier = Modifier.size(ButtonDefaults.IconSize)
             )
             Text("Keluar", modifier = Modifier.padding(start = 8.dp))
         }
@@ -217,21 +222,11 @@ private fun PreviewProfile(uiState: ProfileUiState) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, name = "Berisi data")
 @Composable
 private fun ProfilePreview() {
     PreviewProfile(
-        ProfileUiState.Success(
-            User(
-                id = 1,
-                name = "Investor Demo",
-                email = "demo@jurnal.id",
-                passwordHash = "",
-                salt = "",
-                investingStyle = "Swing trading"
-            )
-        )
-    )
+        ProfileUiState.Success(previewUser()))
 }
 
 @Preview(showBackground = true, name = "Kosong")

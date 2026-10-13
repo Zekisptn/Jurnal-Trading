@@ -139,7 +139,7 @@ private fun LoginContent(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, name = "Form kosong")
 @Composable
 private fun LoginPreview() {
     JurnalTredingTheme {

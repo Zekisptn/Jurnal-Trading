@@ -159,7 +159,7 @@ private fun PreviewList(uiState: JournalListUiState) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, name = "Berisi data")
 @Composable
 private fun JournalListPreview() {
     PreviewList(

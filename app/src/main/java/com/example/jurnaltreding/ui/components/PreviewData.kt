@@ -2,7 +2,18 @@ package com.example.jurnaltreding.ui.components
 
 import com.example.jurnaltreding.data.local.Emotion
 import com.example.jurnaltreding.data.local.JournalEntry
+import com.example.jurnaltreding.data.local.User
 import java.time.LocalDate
+
+/** User contoh khusus untuk @Preview. */
+internal fun previewUser() = User(
+    id = 1,
+    name = "Investor Demo",
+    email = "demo@jurnal.id",
+    passwordHash = "",
+    salt = "",
+    investingStyle = "Swing trading"
+)
 
 /** Catatan contoh khusus untuk @Preview di Android Studio; tidak pernah masuk ke database. */
 internal fun previewEntries(): List<JournalEntry> {
