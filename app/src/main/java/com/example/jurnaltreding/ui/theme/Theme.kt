@@ -35,7 +35,12 @@ private val LightColorScheme = lightColorScheme(
     surfaceVariant = SurfaceVariant90,
     onSurfaceVariant = OnSurfaceVariant30,
     outline = Outline50,
-    outlineVariant = OutlineVariant80
+    outlineVariant = OutlineVariant80,
+    surfaceContainerLowest = SurfaceContainerLowest100,
+    surfaceContainerLow = SurfaceContainerLow96,
+    surfaceContainer = SurfaceContainer94,
+    surfaceContainerHigh = SurfaceContainerHigh92,
+    surfaceContainerHighest = SurfaceContainerHighest90
 )
 
 private val DarkColorScheme = darkColorScheme(
@@ -62,7 +67,12 @@ private val DarkColorScheme = darkColorScheme(
     surfaceVariant = SurfaceVariant30,
     onSurfaceVariant = OnSurfaceVariant80,
     outline = Outline60,
-    outlineVariant = OutlineVariant30
+    outlineVariant = OutlineVariant30,
+    surfaceContainerLowest = SurfaceContainerLowest4,
+    surfaceContainerLow = SurfaceContainerLow10,
+    surfaceContainer = SurfaceContainer12,
+    surfaceContainerHigh = SurfaceContainerHigh17,
+    surfaceContainerHighest = SurfaceContainerHighest22
 )
 
 /** Warna tambahan di luar ColorScheme Material 3: penanda untung dan rugi. */

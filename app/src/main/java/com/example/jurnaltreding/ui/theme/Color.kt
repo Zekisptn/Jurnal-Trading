@@ -22,6 +22,11 @@ val SurfaceVariant90 = Color(0xFFDCE5DC)
 val OnSurfaceVariant30 = Color(0xFF414942)
 val Outline50 = Color(0xFF717971)
 val OutlineVariant80 = Color(0xFFC0C9C0)
+val SurfaceContainerLowest100 = Color(0xFFFFFFFF)
+val SurfaceContainerLow96 = Color(0xFFF2F5F0)
+val SurfaceContainer94 = Color(0xFFECEFEA)
+val SurfaceContainerHigh92 = Color(0xFFE6E9E4)
+val SurfaceContainerHighest90 = Color(0xFFE1E3DE)
 
 // Palet gelap
 val Green80 = Color(0xFF8BD6A9)
@@ -43,6 +48,11 @@ val SurfaceVariant30 = Color(0xFF414942)
 val OnSurfaceVariant80 = Color(0xFFC0C9C0)
 val Outline60 = Color(0xFF8A938A)
 val OutlineVariant30 = Color(0xFF414942)
+val SurfaceContainerLowest4 = Color(0xFF0C0F0D)
+val SurfaceContainerLow10 = Color(0xFF191C1A)
+val SurfaceContainer12 = Color(0xFF1D201E)
+val SurfaceContainerHigh17 = Color(0xFF282B28)
+val SurfaceContainerHighest22 = Color(0xFF323633)
 
 // Warna untung/rugi
 val ProfitLight = Color(0xFF1B7F3B)
