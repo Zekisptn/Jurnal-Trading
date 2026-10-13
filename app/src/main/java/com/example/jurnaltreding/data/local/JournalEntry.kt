@@ -1,9 +1,26 @@
 package com.example.jurnaltreding.data.local
 
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import java.time.LocalDate
 
 /** Satu catatan = satu posisi trading, dari beli sampai jual. */
+@Entity(
+    tableName = "journal_entries",
+    foreignKeys = [
+        ForeignKey(
+            entity = User::class,
+            parentColumns = ["id"],
+            childColumns = ["userId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [Index("userId")]
+)
 data class JournalEntry(
+    @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val userId: Long,
     val stockCode: String,
